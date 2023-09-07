@@ -2,6 +2,7 @@ from wagtail.models import Page
 from wagtail.api import APIField
 from wagtail.fields import StreamField
 from wagtail.admin.panels import FieldPanel
+from wagtail.blocks import RichTextBlock, URLBlock, RawHTMLBlock
 from wagtail_blocks.blocks import (
     HeaderBlock,
     ListBlock,
@@ -18,6 +19,9 @@ from wagtail_blocks.blocks import (
 class HomePage(Page):
     body = StreamField([
         ('header', HeaderBlock()),
+        ('text', RichTextBlock()),
+        ('link', URLBlock()),
+        ('html', RawHTMLBlock()),
         ('list', ListBlock()),
         ('image_text_overlay', ImageTextOverlayBlock()),
         ('cropped_images_with_text', CroppedImagesWithTextBlock()),
