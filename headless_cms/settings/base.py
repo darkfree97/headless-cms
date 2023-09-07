@@ -180,5 +180,5 @@ AWS_S3_REGION_NAME = os.environ.get("BUCKETEER_AWS_REGION", "eu-west-1")
 if all([AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_STORAGE_BUCKET_NAME]):
     STORAGES = {
         "default": {"BACKEND": "storages.backends.s3boto3.S3Boto3Storage"},
-        "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"},
+        # "staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"},
     }
